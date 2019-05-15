@@ -1,4 +1,5 @@
-- hosts: "{{ env_host }}"
+#- hosts: "{{ env_host }}"
+- hosts: rstudioRH7 
   vars:  
     custom_repo: true
   vars_files:
@@ -116,19 +117,16 @@
 #       gpgcheck=0' >> /etc/yum.repos.d/local.repo
   roles:
 #   - umask
-#   - devtools
-    - devtools7
-#   - open_office
+#   - devtools7
 #   - open_officeRH7
 #   - evince
 #   See line #39 (evince)
 #   - stattransfer
 #   - stattransfer14
-#   - sublime
 #   - sublime3
-#   - ultra-edit
 #   - ultra-editRH7
-    - texliveRH7
+#   - texliveRH7
+    - r-studio-desktopRH7
 
   post_tasks:
 #   - name: Install texlive
