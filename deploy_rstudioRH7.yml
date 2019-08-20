@@ -31,15 +31,6 @@
     - name: Install epel
       shell:  yum -y localinstall /tmp/epel*rpm
 
-    - name: install X Window System
-      shell: yum -y groupinstall "X Window System"
-
-    - name: install XFCE
-      shell: yum -y groupinstall "xfce"
-
-    - name: install Evince
-      shell: yum -y install evince
-
     - name: Install python-pip
       shell: yum install -y python27 python-pip
     - name: install gdown
@@ -127,6 +118,8 @@
 #   - ultra-editRH7
 #   - texliveRH7
     - r-studio-desktopRH7
+    - r-studio-serverRH7
+    - r-studio-server-configRH7
 
   post_tasks:
 #   - name: Install texlive
