@@ -38,10 +38,11 @@
 #     yum:
 #       name: python27-python-pip
 #       state: latest
-    - name: Install python 3.6 and pip
-      shell: yum install -y python36 python36-pip
-    - name: Install bash autocomplete
-      shell: yum install -y bash-completion bash-completion-extras
+
+#   - name: Install python 3.6 and pip
+#     shell: yum install -y python36 python36-pip
+#   - name: Install bash autocomplete
+#     shell: yum install -y bash-completion bash-completion-extras
 
 #   - name: enable scl
 #     become: yes
@@ -59,42 +60,25 @@
 #     easy_install:
 #       name: pip
 #       state: latest
-#    - name: Build custom local repo
+#   - name: Build custom local repo
 #      shell: wget https://drive.google.com/open?id=1qaZH9_SrGyjHjWT3P2WtvZAhEkP9YG1Z /tmp
-#   - name: make localrepo directory
-#     shell: mkdir -p /opt/ancillary_local
-#   - name: make OpenOffice directory
-#     shell: mkdir -p /opt/ancillary_local/OO416
-#   - name: make Sublime3 directory
-#     shell: mkdir -p /opt/ancillary_local/Sublime3
-#   - name: make Sublime3 install directory
-#     shell: mkdir -p /usr/local/sublime
-#   - name: make stattransfer14 install directory
-#     shell: mkdir -p /usr/local/StatTransfer14
 
+#   - name: Extract repo to destination point
+#     shell:  tar xvf /tmp/ancilRH7_repo.tar.gz -C /opt/ancillary_local
+#   - name: Extract OpenOffice 4.1.6 
+#     shell:  tar xvf /opt/ancillary_local/Apache_OpenOffice_4.1.6_Linux_x86-64_install-rpm_en-US.tar.gz -C /opt/ancillary_local/OO416 
+#   - name: install bz2
+#     yum:
+#       name: bzip2
 
- #  - name: Extract repo to destination point
- #    shell:  tar xvf /tmp/ancilRH7_repo.tar.gz -C /opt/ancillary_local
- #  - name: Extract OpenOffice 4.1.6 
- #    shell:  tar xvf /opt/ancillary_local/Apache_OpenOffice_4.1.6_Linux_x86-64_install-rpm_en-US.tar.gz -C /opt/ancillary_local/OO416 
-    - name: install bz2
-      yum:
-        name: bzip2
-
- #  - name: Extract Sublime3 
- #    shell:  tar xvf /opt/ancillary_local/sublime_text_3_build_3207_x64.tar.bz2 -C /opt/ancillary_local/Sublime3
-
- #  - name: Extract Sublime3 to install dir
- #    shell:  tar xvf /opt/ancillary_local/sublime_text_3_build_3207_x64.tar.bz2 -C /usr/local/sublime 
-
- #  - name: install createrepo
- #    yum:
- #      name: createrepo
- #      state: latest
- #  - name: create local repo 
- #    shell: createrepo /opt/ancillary_local/OO416
-##    shell: createrepo /opt/devrepo-master/Packages
- #  - name: create local repo file with updated link
+#   - name: install createrepo
+#     yum:
+#       name: createrepo
+#       state: latest
+#   - name: create local repo 
+#     shell: createrepo /opt/ancillary_local/OO416
+#     shell: createrepo /opt/devrepo-master/Packages
+#   - name: create local repo file with updated link
 #     file:
 #       path: /etc/yum.repos.d/local.repo
 #       state: touch
@@ -109,24 +93,11 @@
   roles:
 #   - umask
 #   - devtools7
-#   - open_officeRH7
-#   - evince
-#   See line #39 (evince)
-#   - stattransfer
-#   - stattransfer14
-#   - sublime3
-#   - ultra-editRH7
-#   - texliveRH7
     - r-studio-desktopRH7
-    - r-studio-serverRH7
-    - r-studio-server-configRH7
+#   - r-studio-serverRH7
+#   - r-studio-server-configRH7
 
   post_tasks:
-#   - name: Install texlive
-#     yum:
-#       name: texlive2016
-#       state: present
-
 #   - name: remove RHEL7.5
 #     command:  "/usr/bin/subscription-manager remove --all"
 #   - name: unregister RHEL7.5
