@@ -11,7 +11,7 @@
         msg: "Variables: _uid = {{ _uid }}, _pwd = **********"
 #       msg: "Variables: _uid = {{ _uid }}, _pwd = {{ _pwd }}"
     - name: register RHEL7.5
-      command: "/usr/bin/subscription-manager register --username {{ _uid }} --password {{ _pwd }} --auto-attach"
+      command: "/usr/bin/subscription-manager register --username {{ _uid }} --password {{ _pwd }} --auto-attach --force"
       when: _uid != "" and _pwd != ""
 #     command: "/usr/bin/subscription-manager register --username <name> --password <password> --auto-attach"
     - name: register RHEL7 repo
@@ -33,16 +33,17 @@
 
     - name: Install python-pip
       shell: yum install -y python27 python-pip
-    - name: install gdown
-      shell: pip install gdown  
+
+#   - name: install gdown
+#     shell: pip install gdown  
 #     yum:
 #       name: python27-python-pip
 #       state: latest
 
-#   - name: Install python 3.6 and pip
-#     shell: yum install -y python36 python36-pip
-#   - name: Install bash autocomplete
-#     shell: yum install -y bash-completion bash-completion-extras
+    - name: Install python 3.6 and pip
+      shell: yum install -y python36 python36-pip
+    - name: Install bash autocomplete
+      shell: yum install -y bash-completion bash-completion-extras
 
 #   - name: enable scl
 #     become: yes
@@ -92,7 +93,7 @@
 #       gpgcheck=0' >> /etc/yum.repos.d/local.repo
   roles:
 #   - umask
-#   - devtools7
+    - devtools7
     - r-studio-desktopRH7
 #   - r-studio-serverRH7
 #   - r-studio-server-configRH7
