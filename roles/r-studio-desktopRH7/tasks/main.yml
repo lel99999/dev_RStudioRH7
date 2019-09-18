@@ -1,6 +1,10 @@
 ---
 - name: Install R Studio Desktop
-  shell: yum install -y https://download1.rstudio.org/desktop/centos7/x86_64/rstudio-1.2.1335-x86_64.rpm
+  yum:
+    name: https://download1.rstudio.org/desktop/centos7/x86_64/rstudio-1.2.1335-x86_64.rpm
+    state: present
+    disable_gpg_check: yes
+#  shell: yum install -y https://download1.rstudio.org/desktop/centos7/x86_64/rstudio-1.2.1335-x86_64.rpm
 #  when: custom_repo
 
 # yum:
