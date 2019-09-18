@@ -7,16 +7,16 @@
   tags:
     - rstudio-server
 
-#- name: Add ip whitelist
-#  template:
-#    src: ip-rules.j2
-#    dest: /etc/rstudio/ip-rules
-#  with_items: "{{ groups['proxy_server']|default(omit) }}"
-#  when: deploy_iptables
-#  notify:
-#    - restart rstudio-server
-#  tags:
-#    - rstudio-server
+- name: Add ip whitelist
+  template:
+    src: ip-rules.j2
+    dest: /etc/rstudio/ip-rules
+  with_items: "{{ groups['proxy_server']|default(omit) }}"
+  when: deploy_iptables and envir != "dev.local"
+  notify:
+    - restart rstudio-server
+  tags:
+    - rstudio-server
 
 - name: Copy over pam.d config from login (usually works)
   shell: cp -f /etc/pam.d/login /etc/pam.d/rstudio
@@ -45,6 +45,11 @@
     - /opt/rstudio-server/monitoring-data
   tags:
     - rstudio-server
+
+- name: Create /etc/rstudio folder
+  file:
+    path: /etc/rstudio
+    state: directory
 
 - name: Add server config file
   template:
@@ -82,14 +87,14 @@
 
 - name: Open R Studio Server port in iptables
   command: "iptables -I {{ iptables_chain }} 3 -m state --state NEW -p tcp --dport {{ rstudio_port }} -s {{ hostvars[item]['ansible_ssh_host'] }} -j ACCEPT"
-  when: iptables_config and deploy_iptables
+  when: iptables_config and deploy_iptables and envir != "dev.local"
   with_items: "{{ groups['proxy_server']|default(omit) }}"
   tags:
     - rstudio-server
 
 - name: Save rules
   command: "/sbin/service iptables save"
-  when: iptables_config and deploy_iptables
+  when: iptables_config and deploy_iptables and envir != "dev.local"
   tags:
     - rstudio-server
 
