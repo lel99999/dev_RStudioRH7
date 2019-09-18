@@ -34,6 +34,12 @@
   tags:
     - devtools7
 
+#- name: Create backwards compatible symlink for CC,CPP
+#  file:
+#    src: /opt/devtoolset-7
+#    dest: /opt/devtoolset-2
+#    state: link
+
 #- name: Start using devtools
 #  become: yes
 #  become_method: sudo
