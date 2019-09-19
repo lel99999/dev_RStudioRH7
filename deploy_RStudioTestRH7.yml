@@ -98,6 +98,9 @@
     - r-studio-desktopRH7
     - r-studio-serverRH7
     - r-studio-server-configRH7
+    - r_RH7
+    - r-shinyRH7
+    - r-shiny-configRH7
 
   post_tasks:
 #   - name: remove RHEL7.5

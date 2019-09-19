@@ -1,4 +1,4 @@
 # main.yml
 ---
 dependencies:
-- role: sharedRH7
+- role: shared7
