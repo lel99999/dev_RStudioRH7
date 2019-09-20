@@ -1,0 +1,6 @@
+---
+dependencies:
+- role: python
+  when: install_python
+- role: openjdk1.8
+#- role: jdk
