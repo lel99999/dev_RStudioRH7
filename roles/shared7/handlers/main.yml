@@ -17,7 +17,8 @@
     state: restarted
 
 - name: restart rstudio-server
-  command: restart rstudio-server
+  command: systemctl restart rstudio-server
+# command: restart rstudio-server
 
 - name: restart elasticsearch
   service:
@@ -35,10 +36,11 @@
     state: restarted
 
 - name: restart shiny-server
-  command: "restart shiny-server"
+  command: "systemctl restart shiny-server"
 
 - name: restart apache
-  shell: "service httpd24-httpd restart"
+  shell: "systemctl restart httpd24-httpd"
+# shell: "service httpd24-httpd restart"
 
 - name: restart sas-server
   service:
