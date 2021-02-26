@@ -5,7 +5,7 @@ RStudio Development/Deployment Workspace, Deployment, and Notes for RedHat 7.x
 - RStudio Server Configuration
 
 #### RStudio Products
-- Shiny Server -> v1.5.16.968
+- Shiny Server -> v1.5.16.958
 - R Packages
 - shinyapps.io <br/>
 
