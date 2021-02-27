@@ -95,6 +95,7 @@
 #   - umask
     - epel7
     - devtools7
+    - r_RH7
     - r-studio-desktopRH7
     - r-studio-serverRH7
     - r-studio-server-configRH7
