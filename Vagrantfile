@@ -21,7 +21,8 @@ Vagrant.configure("2") do |config|
     rstudioRH7.vm.network "private_network", ip: "192.168.60.151"
     rstudioRH7.vm.provision "shell", :inline => "sudo echo '192.168.60.151 rstudioRH7.local rstudioRH7' >> /etc/hosts"
     rstudioRH7.vm.provision "ansible" do |ansible|
-      ansible.playbook = "deploy_RStudioTestRH7.yml"
+#     ansible.playbook = "deploy_RStudioTestRH7.yml"
+      ansible.playbook = "deploy_RStudioRH7_DEV.yml"
       ansible.inventory_path = "vagrant_hosts"
       #ansible.tags = ansible_tags
       #ansible.verbose = ansible_verbosity
