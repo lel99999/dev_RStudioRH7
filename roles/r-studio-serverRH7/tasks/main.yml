@@ -20,10 +20,17 @@
   tags:
     - rstudio-server
 
+#- name: Remove R Studio Server
+#  yum:
+#    name: "{{ rstudio_server_package_name }}"
+#    state: absent
+
 - name: Install R Studio Server
   yum:
     name: "{{ rstudio_server_package_name }}"
-    state: "{{ rstudio_server_package_state }}"
+#   state: "{{ rstudio_server_package_state }}"
+    state: present
+    update_cache: yes
     disable_gpg_check: yes
     validate_certs: no
   when: update_rstudio
