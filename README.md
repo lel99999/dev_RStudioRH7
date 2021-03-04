@@ -15,3 +15,8 @@ RStudio Development/Deployment Workspace, Deployment, and Notes for RedHat 7.x
 - RStudio Server Pro
 - RStudio Connect
 - RStudio Package Manager
+
+#### Launch RStudio
+```
+$ssh -Y <host> QMLSCENE_DEVICE=software rstudio
+```
