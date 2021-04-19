@@ -17,6 +17,11 @@ RStudio Development/Deployment Workspace, Deployment, and Notes for RedHat 7.x
 - RStudio Package Manager
 
 #### Launch RStudio
+If launch error like the following occurs: <br/>
+![https://github.com/lel99999/dev_RStudioRH7/blob/master/rstudio_error-01a.png](https://github.com/lel99999/dev_RStudioRH7/blob/master/rstudio_error-01a.png) <br/>
+
+Launch RStudio with the following: <br/>
+
 ```
 $ssh -Y <host> QMLSCENE_DEVICE=software rstudio
 ```
