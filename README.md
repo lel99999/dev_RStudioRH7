@@ -25,3 +25,19 @@ Launch RStudio with the following: <br/>
 ```
 $ssh -Y <host> QMLSCENE_DEVICE=software rstudio
 ```
+
+#### Updated for tidycensus
+- install/scl enable devtools-8
+- configure/make/make install gdal223
+- copy related libraries to /lib64
+- Install sf package
+- Install tidycensus package
+
+```
+$sudo cp /usr/local/lib/libkml* /lib64/
+$sudo cp /usr/local/lib/liburiparser* /lib64/
+$sudo cp /usr/local/lib/libminizip* /lib64/
+
+$sudo R -e 'install.packages("sf",repo="https://CRAN.R-project.org")'
+$sudo R -e 'install.packages("tidycensus",repo="https://CRAN.R-project.org")'
+```
