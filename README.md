@@ -53,6 +53,9 @@ $sudo R -e 'install.packages("tidycensus",repo="https://CRAN.R-project.org")'
 >install.packages('remotes')
 
 >remotes::install_github('r-dbi/RPostgres")
+```
 
-
+***PQlibVersion Error Fix*** <br/>
+```
+$sudo ln -s /usr/pgsql-10 /usr/local/postgresql
 ```
