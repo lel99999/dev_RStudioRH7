@@ -59,3 +59,12 @@ $sudo R -e 'install.packages("tidycensus",repo="https://CRAN.R-project.org")'
 ```
 $sudo ln -s /usr/pgsql-10 /usr/local/postgresql
 ```
+
+#### For pgsql-10, Error: remotes::install_github("r-dbi/RPostgres") Fix
+![https://github.com/lel99999/dev_RStudioRH7/blob/master/RPostgres_ERROR-01.PNG](https://github.com/lel99999/dev_RStudioRH7/blob/master/RPostgres_ERROR-01.PNG) <br/>
+
+```
+$export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/pgsql/lib/pkgconfig
+$export PATH=$PATH:/usr/pgsql/lib/pkgconfig
+sudo R -e 'remotes::install_github("r-dbi/RPostgres")' --configure-vars='INCLUDE_DIR=/usr/pgsql/bin:/usr/pgsql-10/include'
+```
