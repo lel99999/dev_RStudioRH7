@@ -76,3 +76,10 @@ sudo R -e 'remotes::install_github("r-dbi/RPostgres")' --configure-vars='INCLUDE
 >dbFetch(test_q)
 
 ```
+
+#### R Connection String using ODBC DSN
+```
+>con1 <- DBI::dbConnect(odbc::odbc(),dsn='<dsn_name>',uid='<username>',pwd='*****')
+>test_q1 <- dbSendQuery(con1,'SELECT * from public.test;')
+>dbFetch(test_q1)
+```
