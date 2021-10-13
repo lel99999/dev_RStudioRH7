@@ -68,3 +68,11 @@ $export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/pgsql/lib/pkgconfig
 $export PATH=$PATH:/usr/pgsql/lib/pkgconfig
 sudo R -e 'remotes::install_github("r-dbi/RPostgres")' --configure-vars='INCLUDE_DIR=/usr/pgsql/bin:/usr/pgsql-10/include'
 ```
+
+#### R Connection String using PostgreSQL Driver
+```
+>con <- dbConnect(RPostgres::Postgres(),dbname = 'testdb', host = 'testhost.example.com', port = '5432', user = '<username>', password = '*****')
+>test_q <- dbSendQuery(con,'SELECT * from public.test;')
+>dbFetch(test_q)
+
+```
