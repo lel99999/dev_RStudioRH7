@@ -41,3 +41,18 @@ $sudo cp /usr/local/lib/libminizip* /lib64/
 $sudo R -e 'install.packages("sf",repo="https://CRAN.R-project.org")'
 $sudo R -e 'install.packages("tidycensus",repo="https://CRAN.R-project.org")'
 ```
+
+#### Install RPostgreSQL from CRAN and RPostgres from Gibhub
+```
+>install.packages('RPostgreSQL')
+```
+
+***Install from CRAN*** <br/>
+```
+>install.packages('devtools')
+>install.packages('remotes')
+
+>remotes::install_github('r-dbi/RPostgres")
+
+
+```
