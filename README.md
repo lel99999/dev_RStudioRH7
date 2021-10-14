@@ -87,3 +87,14 @@ sudo R -e 'remotes::install_github("r-dbi/RPostgres")' --configure-vars='INCLUDE
 ```
 >library(DBI)
 ```
+#### isql Error
+```
+$isql -v <dsn_name>
+[08001][unixODBC]could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+```
+***isql Fix*** <br/>
+```
+$sudo yum install libiodbc
+```
