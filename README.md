@@ -83,3 +83,7 @@ sudo R -e 'remotes::install_github("r-dbi/RPostgres")' --configure-vars='INCLUDE
 >test_q1 <- dbSendQuery(con1,'SELECT * from public.test;')
 >dbFetch(test_q1)
 ```
+#### Error: could not find function "dbConnect"
+```
+>library(DBI)
+```
