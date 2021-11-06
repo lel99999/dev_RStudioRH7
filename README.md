@@ -98,3 +98,5 @@ $isql -v <dsn_name>
 ```
 $sudo yum install libiodbc
 ```
+#### RStudio Error for hadabend session error
+Fix is to mv  ~/.rstudio to ~/.rstudio_bkp <br/>
