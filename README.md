@@ -100,3 +100,7 @@ $sudo yum install libiodbc
 ```
 #### RStudio Error for hadabend session error
 Fix is to mv  ~/.rstudio to ~/.rstudio_bkp <br/>
+
+#### RStudio XWindows Error
+- review /etc/ssh/sshd_config <br/>
+- X11Forwarding on Server and Client
