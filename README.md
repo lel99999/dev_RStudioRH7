@@ -109,4 +109,4 @@ Fix is to mv  ~/.rstudio to ~/.rstudio_bkp <br/>
 - ![RStudio libGL Error](https://github.com/lel99999/dev_RStudioRH7/blob/master/rstudio-libGL-errors-01.PNG) <br/>
 
 - Debug: $export LIBGL_DEBUG=verbose
-  ![RStudio libGL Debug](https://github.com/lel99999/dev_RStudioRH7/blob/master/rstudio-libGL-debug-01.PNG) <br/> 
+  ![RStudio libGL Debug](https://github.com/lel99999/dev_RStudioRH7/blob/master/rstudio-libGL-debug-01a.png) <br/> 
