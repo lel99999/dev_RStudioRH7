@@ -104,3 +104,6 @@ Fix is to mv  ~/.rstudio to ~/.rstudio_bkp <br/>
 #### RStudio XWindows Error
 - review /etc/ssh/sshd_config <br/>
 - X11Forwarding on Server and Client
+
+#### RStudio libGL Error:
+![RStudio libGL Error](https://github.com/lel99999/dev_RStudioRH7/blob/master/rstudio-libGL-errors-01.PNG) <br/>
