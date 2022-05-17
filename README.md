@@ -105,6 +105,10 @@ Fix is to mv  ~/.rstudio to ~/.rstudio_bkp <br/>
 - review /etc/ssh/sshd_config <br/>
 - X11Forwarding on Server and Client
 
+#### Suppress RStudio QT Error 
+- Set env QT_LOGGING_RULES
+  `$ export QT_LOGGING_RULES='*.debug=false;qt.qpa.*=false'` <br/>
+
 #### RStudio libGL Error:
 - ![RStudio libGL Error](https://github.com/lel99999/dev_RStudioRH7/blob/master/rstudio-libGL-errors-01.PNG) <br/>
 
