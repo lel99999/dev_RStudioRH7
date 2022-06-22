@@ -1,8 +1,8 @@
 # dev_RStudioRH7
 RStudio Development/Deployment Workspace, Deployment, and Notes for RedHat 7.x
-- RStudio Desktop -> v1.4.1106
-- RStudio Server -> v.1.4.1106
-- RStudio Server Configuration
+- RStudio Desktop -> v1.4.1106 -> v2022.02.3-492 
+- RStudio Server -> v.1.4.1106 -> v2022.02.3-492
+- RStudio Server Configuration -> v2022.02.3-492
 
 #### RStudio Products
 - Shiny Server -> v1.5.16.958
