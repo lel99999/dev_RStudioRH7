@@ -118,3 +118,6 @@ Fix is to mv  ~/.rstudio to ~/.rstudio_bkp <br/>
 
 - Debug: $export LIBGL_DEBUG=verbose
   ![RStudio libGL Debug](https://github.com/lel99999/dev_RStudioRH7/blob/master/rstudio-libGL-debug-01a.png) <br/> 
+
+#### Scripting and Command-line frontend for R (littler)
+- [http://dirk.eddelbuettel.com/code/littler.html](http://dirk.eddelbuettel.com/code/littler.html) <br/>
