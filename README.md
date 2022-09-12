@@ -121,3 +121,9 @@ Fix is to mv  ~/.rstudio to ~/.rstudio_bkp <br/>
 
 #### Scripting and Command-line frontend for R (littler)
 - [http://dirk.eddelbuettel.com/code/littler.html](http://dirk.eddelbuettel.com/code/littler.html) <br/>
+
+#### Install lwgeom
+- [https://cran.r-project.org/web/packages/lwgeom/lwgeom.pdf](https://cran.r-project.org/web/packages/lwgeom/lwgeom.pdf) <br/>
+  ```
+  $sudo R -e 'install.packages("lwgeom",repos="https://cran.r-project.org")'
+  ```
