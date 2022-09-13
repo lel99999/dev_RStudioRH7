@@ -130,3 +130,6 @@ Fix is to mv  ~/.rstudio to ~/.rstudio_bkp <br/>
 #### Build geos geos-devel from source
 - [https://cmake.org/download/](https://cmake.org/download/) <br/>
 - [https://libgeos.org/usage/download/](https://libgeos.org/usage/download/) <br/>
+
+#### Use Doxygen for API Documentation
+- [https://www.doxygen.nl/](https://www.doxygen.nl/) <br/>
