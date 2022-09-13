@@ -133,3 +133,17 @@ Fix is to mv  ~/.rstudio to ~/.rstudio_bkp <br/>
 
 #### Use Doxygen for API Documentation
 - [https://www.doxygen.nl/](https://www.doxygen.nl/) <br/>
+
+#### Updating PROJ -> 6.2.x and SQLite -> 3.11.x for RHEL7
+- [http://sqlite.org/2016/sqlite-autoconf-3110000.tar.gz](http://sqlite.org/2016/sqlite-autoconf-3110000.tar.gz) <br/>
+  ```
+  $./configure --prefix=/usr --disable-static        \
+            CFLAGS="-g -O2 -DSQLITE_ENABLE_FTS3=1 \
+            -DSQLITE_ENABLE_COLUMN_METADATA=1     \
+            -DSQLITE_ENABLE_UNLOCK_NOTIFY=1       \
+            -DSQLITE_SECURE_DELETE=1              \
+            -DSQLITE_ENABLE_DBSTAT_VTAB=1" && make -j1
+
+
+  $export SQLITE3_LIBS="-L/usr/lib -lsqlite3"
+  ```
