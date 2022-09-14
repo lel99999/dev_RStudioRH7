@@ -151,3 +151,18 @@ Fix is to mv  ~/.rstudio to ~/.rstudio_bkp <br/>
 ```
 $sudo R -e 'install.packages("Rcpp", repos="https://RcppCore.github.io/drat")'
 ```
+#### Install rstan on RHEL 7.9
+- [https://github.com/stan-dev/rstan](https://github.com/stan-dev/rstan) <br/>
+- Using >= devtoolset-7
+  ```
+  $scl enable devtoolset-7 bash
+  ```
+- ERROR: C++14 standard requested but CXX14 is not defined <br/>
+  - FIX:  Update R_Makevars add below
+  ```
+  ## C++ flags
+  CXX=g++
+  CXX11=g++
+  CXX14=g++
+  CXX17=g++
+  ```
