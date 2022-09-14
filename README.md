@@ -147,3 +147,7 @@ Fix is to mv  ~/.rstudio to ~/.rstudio_bkp <br/>
 
   $export SQLITE3_LIBS="-L/usr/lib -lsqlite3"
   ```
+#### Update Rcpp
+```
+$sudo R -e 'install.packages("Rcpp", repos="https://RcppCore.github.io/drat")'
+```
