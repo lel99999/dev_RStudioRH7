@@ -1,8 +1,12 @@
-# dev_RStudioRH7
+#### dev_RStudioRH7
 RStudio Development/Deployment Workspace, Deployment, and Notes for RedHat 7.x
-- RStudio Desktop -> v1.4.1106
-- RStudio Server -> v.1.4.1106
-- RStudio Server Configuration
+- RStudio Desktop -> v1.4.1106 -> v2022.02.3-492 
+- RStudio Server -> v.1.4.1106 -> v2022.02.3-492
+- RStudio Server Configuration -> v2022.02.3-492
+
+##### TODO
+- Review Running RStudio with different versions of R v3.6, v4.x and capability to switch
+- Investigate Renv & renv for multiple runtime shims
 
 #### RStudio Products
 - Shiny Server -> v1.5.16.958
@@ -114,3 +118,52 @@ Fix is to mv  ~/.rstudio to ~/.rstudio_bkp <br/>
 
 - Debug: $export LIBGL_DEBUG=verbose
   ![RStudio libGL Debug](https://github.com/lel99999/dev_RStudioRH7/blob/master/rstudio-libGL-debug-01a.png) <br/> 
+
+#### Scripting and Command-line frontend for R (littler)
+- [http://dirk.eddelbuettel.com/code/littler.html](http://dirk.eddelbuettel.com/code/littler.html) <br/>
+
+#### Install lwgeom
+- [https://cran.r-project.org/web/packages/lwgeom/lwgeom.pdf](https://cran.r-project.org/web/packages/lwgeom/lwgeom.pdf) <br/>
+  ```
+  $sudo R -e 'install.packages("lwgeom",repos="https://cran.r-project.org")'
+  ```
+#### Build geos geos-devel from source
+- [https://cmake.org/download/](https://cmake.org/download/) <br/>
+- [https://libgeos.org/usage/download/](https://libgeos.org/usage/download/) <br/>
+
+#### Use Doxygen for API Documentation
+- [https://www.doxygen.nl/](https://www.doxygen.nl/) <br/>
+
+#### Updating PROJ -> 6.2.x and SQLite -> 3.11.x for RHEL7
+- [http://sqlite.org/2016/sqlite-autoconf-3110000.tar.gz](http://sqlite.org/2016/sqlite-autoconf-3110000.tar.gz) <br/>
+  ```
+  $./configure --prefix=/usr --disable-static        \
+            CFLAGS="-g -O2 -DSQLITE_ENABLE_FTS3=1 \
+            -DSQLITE_ENABLE_COLUMN_METADATA=1     \
+            -DSQLITE_ENABLE_UNLOCK_NOTIFY=1       \
+            -DSQLITE_SECURE_DELETE=1              \
+            -DSQLITE_ENABLE_DBSTAT_VTAB=1" && make -j1
+
+
+  $export SQLITE3_LIBS="-L/usr/lib -lsqlite3"
+  ```
+#### Update Rcpp
+```
+$sudo R -e 'install.packages("Rcpp", repos="https://RcppCore.github.io/drat")'
+```
+#### Install rstan on RHEL 7.9
+- [https://mc-stan.org/](https://mc-stan.org/) <br/>
+- [https://github.com/stan-dev/rstan](https://github.com/stan-dev/rstan) <br/>
+- Using >= devtoolset-7 <br/>
+  ```
+  $scl enable devtoolset-7 bash
+  ```
+- ERROR: C++14 standard requested but CXX14 is not defined <br/>
+  - FIX:  Update R_Makevars add below
+  ```
+  ## C++ flags
+  CXX=g++
+  CXX11=g++
+  CXX14=g++
+  CXX17=g++
+  ```
