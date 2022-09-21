@@ -1,8 +1,8 @@
 #### dev_RStudioRH7
 RStudio Development/Deployment Workspace, Deployment, and Notes for RedHat 7.x
-- RStudio Desktop -> v1.4.1106 -> v2022.02.3-492 
-- RStudio Server -> v.1.4.1106 -> v2022.02.3-492
-- RStudio Server Configuration -> v2022.02.3-492
+- RStudio Desktop -> v1.4.1106 -> v2022.07.1-554 
+- RStudio Server -> v.1.4.1106 -> v2022.07.1-554
+- RStudio Server Configuration -> v2022.07.1-554
 
 ##### TODO
 - Review Running RStudio with different versions of R v3.6, v4.x and capability to switch
