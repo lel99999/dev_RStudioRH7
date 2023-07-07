@@ -1,5 +1,10 @@
 #### dev_RStudioRH7
 RStudio Development/Deployment Workspace, Deployment, and Notes for RedHat 7.x
+Latest:
+- RStudio Desktop -> https://s3.amazonaws.com/rstudio-ide-build/electron/centos7/x86_64/rstudio-2023.06.0-421-x86_64.rpm
+- RStudio Server -> https://download2.rstudio.org/server/centos7/x86_64/rstudio-server-rhel-2023.06.0-421-x86_64.rpm
+  
+Previous:
 - RStudio Desktop -> v1.4.1106 -> v2022.07.1-554 
 - RStudio Server -> v.1.4.1106 -> v2022.07.1-554
 - RStudio Server Configuration -> v2022.07.1-554
