@@ -2,7 +2,8 @@
 - name: Install R Studio Desktop
   yum:
 #   name: http://download1.rstudio.org/rstudio-0.98.1103-x86_64.rpm
-    name: https://download1.rstudio.org/desktop/centos7/x86_64/rstudio-1.4.1106-x86_64.rpm
+#    name: https://download1.rstudio.org/desktop/centos7/x86_64/rstudio-1.4.1106-x86_64.rpm
+    name: https://s3.amazonaws.com/rstudio-ide-build/electron/centos7/x86_64/rstudio-2023.06.0-421-x86_64.rpm
     state: present
     disable_gpg_check: yes
   when: not custom_repo
